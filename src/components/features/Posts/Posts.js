@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getAllPosts } from '../../../redux/store';
+import { getAllPosts } from '../../../redux/postsRedux';
 import { Container,Button, Card, Col, Row } from "react-bootstrap"
 
 const Post = () => {
