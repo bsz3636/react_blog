@@ -19,7 +19,7 @@ const Post = () => {
       <Row>
         {
           posts.map( 
-            post => <Col className="mb-3 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 d-block d-flex" key={post.id}>
+            post => <Col className="mb-3 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 d-block d- align-items-stretch" key={post.id}>
                 <Card >
                   <Card.Body>
                     <Card.Title className="display-7 fw-bold mb-3">{post.title}</Card.Title>
@@ -32,7 +32,7 @@ const Post = () => {
                     <Card.Text>
                     {post.shortDescription}
                     </Card.Text>
-                    <Link  to="/post/:id" key={post.id}>
+                    <Link  to={"/post/" + post.id} key={post.id}>
                       <Button variant="primary">Read more</Button>
                     </Link>
                   </Card.Body>
