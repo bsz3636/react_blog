@@ -3,7 +3,7 @@ import AddPostForm from '../../features/AddPostForm/AddPostForm';
 
 const AddPost = () => {
   return (
-    <section className={styles.add}>
+    <section className={styles.form}>
     <h2> AddPost</h2>
     <AddPostForm/>
     </section>

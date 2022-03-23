@@ -37,7 +37,7 @@ const SinglePost = () => {
               <p className="mt-3 ">{postData.content}</p>
             </Col>
             <Col className=" col-4">
-              <Link  to="/post/edit/:id" key={postData.id}>
+              <Link  to={'/post/edit/'+ postData.id} key={postData.id}>
                 <Button className=" mx-2"variant="outline-info">Edit</Button>
               </Link>
               <Button variant="outline-danger" onClick={handleShow}>Delate</Button>
