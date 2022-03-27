@@ -4,7 +4,8 @@ import { getPostById} from '../../../redux/postsRedux';
 import { Container,Button, Col, Row, Modal } from 'react-bootstrap';
 import { Link, Navigate } from 'react-router-dom';
 import { useState } from "react";
-import {removePost} from '../../../redux/postsRedux'
+import {removePost} from '../../../redux/postsRedux';
+import { dateToStr} from '../../../utils/dateToStr';
 
 
 const SinglePost = () => {
@@ -33,8 +34,8 @@ const SinglePost = () => {
             <Col className="col-8">
               <h3 className="mb-3 ">{postData.title}</h3>
               <h5> <span>Author: </span>{postData.author}</h5>
-              <h5> <span>Published: </span>{postData.publishedDate}</h5>
-              <p className="mt-3 ">{postData.content}</p>
+              <h5> <span>Published: </span>{ dateToStr(postData.publishedDate)}</h5>
+              <p dangerouslySetInnerHTML={{ __html: postData.content }} className="mt-3 "/>
             </Col>
             <Col className=" col-4">
               <Link  to={'/post/edit/'+ postData.id} key={postData.id}>
