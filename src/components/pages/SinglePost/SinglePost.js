@@ -35,6 +35,7 @@ const SinglePost = () => {
               <h3 className="mb-3 ">{postData.title}</h3>
               <h5> <span>Author: </span>{postData.author}</h5>
               <h5> <span>Published: </span>{ dateToStr(postData.publishedDate)}</h5>
+              <h5> <span>Category: </span>{postData.category}</h5>
               <p dangerouslySetInnerHTML={{ __html: postData.content }} className="mt-3 "/>
             </Col>
             <Col className=" col-4">

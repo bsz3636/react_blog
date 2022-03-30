@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getAllPosts } from '../../../redux/postsRedux';
-import { Container,Button, Card, Col, Row } from "react-bootstrap";
-import { dateToStr} from '../../../utils/dateToStr';
+import { Container,Button, Col, Row } from "react-bootstrap";
+import PostCard from '../../views/PostCard/PostCard';
 
 const Post = () => {
   
@@ -20,24 +20,9 @@ const Post = () => {
       <Row>
         {
           posts.map( 
-            post => <Col className="mb-3 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 d-block d- align-items-stretch" key={post.id}>
-                <Card >
-                  <Card.Body>
-                    <Card.Title className="display-7 fw-bold mb-3">{post.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 ">
-                      <span className="fw-bold">Author: </span>{post.author}
-                    </Card.Subtitle>
-                    <Card.Subtitle className="mb-2 ">
-                      <span className="fw-bold">Published: </span>{dateToStr(post.publishedDate)}
-                    </Card.Subtitle>
-                    <Card.Text>
-                    {post.shortDescription}
-                    </Card.Text>
-                    <Link  to={"/post/" + post.id} key={post.id}>
-                      <Button variant="primary">Read more</Button>
-                    </Link>
-                  </Card.Body>
-                </Card> 
+            post => 
+              <Col className="mb-3 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 d-block d- align-items-stretch" key={post.id}>
+                <PostCard id={post.id}/>
               </Col>
           )
         }
